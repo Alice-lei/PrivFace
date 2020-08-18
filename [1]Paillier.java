@@ -1,5 +1,5 @@
 % Additive homomorphic encryption algorithm： Paillier.java
-···java
+
 public class Paillier {
 
     /**
@@ -97,4 +97,3 @@ public class Paillier {
 
 
 }
-```
