@@ -1,9 +1,22 @@
 # PrivFace
 We aim to devise a faster privacy-preserving face authentication scheme with the revocability and reusability functions (without time-consuming cryptographic operations). 
 
-After our research paper is published, we plan to make the relevant codes open-source to the community for further research.
+## Setup
+Our scheme is implemented in JAVA using Android Studio.
 
-[BY Jing Lei, Yao Wang, and Xuefeng Liu]
+## Dataset
+3,000 pairs of data of highly compact 160-dimensional vectors that contain rich identity information are used as a test set, which has marked indicating whether a pair of data belongs to the same person.
+
+## 
+
+
+
+
+
+
+
+
+
 
 In addition, in our previous study [1], we have used additively homomorphic encryption and secret sharing to construct a revocable and reusable face authentication scheme without the help of a trusted third party.
 
