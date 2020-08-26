@@ -2,7 +2,7 @@
 We aim to devise a faster privacy-preserving face authentication scheme with the revocability and reusability functions (without time-consuming cryptographic operations). 
 
 ## Setup
-Our scheme is implemented in **JAVA** using **Android Studio** (Version 3.0.1 or 3.4).
+Our scheme is implemented in **JAVA** using **Android Studio** (Version 3.0.1 or 3.4.2).
 
 ## Dataset
 3,000 pairs of data of highly compact 160-dimensional vectors that contain rich identity information are used as a test set, which has marked indicating whether a pair of data belongs to the same person.
