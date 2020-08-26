@@ -22,7 +22,14 @@ import java.util.Random;
 public class MainActivity extends Activity {
 
     //secure parameter p
-    public static final BigInteger P = new BigInteger("112986721180975823656687646181756362072730396511130292993288090257022124065104211718095820282619682894257819001354946632167080377288031812881989135298790039652064319203798264032943757162499485955416784405712382491172635015649799139229900759760522947550352777798977629802488448240716735706505997571239267434983");
+    //80bit
+    //public static final BigInteger P = new BigInteger("734095675167610427486539");
+    //128bit
+    //public static final BigInteger P = new BigInteger("313338255604920949022028065218431446231");
+    //160bit
+    public static final BigInteger P = new BigInteger("1248878241464690322159961483223834105349154894079");
+    //256bit
+    // public static final BigInteger P = new BigInteger("66405879945252276366429021340050544119210103710737018505472676728403367984943");
 
     //Decimal threshold
     BigDecimal T;
@@ -68,23 +75,38 @@ public class MainActivity extends Activity {
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //   regist();
+            
             }
         });
 
         verify_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             // initFaceData();
-             // initVerifyData();
-              //  Toast.makeText(getApplicationContext(),X.toString(),Toast.LENGTH_LONG).show();
-            //    Toast.makeText(getApplicationContext(),B.toString(),Toast.LENGTH_LONG).show();
-              //  verify_btn.setText(s.toString());
-                regist();
-                Toast.makeText(getApplicationContext(),CompareResult,Toast.LENGTH_LONG).show();
+                long StartTime = System.currentTimeMillis();
+                initFaceData();
+                long EndTime = System.currentTimeMillis();
+                long Time = EndTime-StartTime;
+                String TimeStr = String.valueOf(Time);
+               Toast.makeText(getApplicationContext(),"测试结果="+CompareResult+" 时间="+TimeStr+"ms"+s,Toast.LENGTH_LONG).show();
+               
                 X.clear();
                 X_.clear();
-                //veirfiy();
+                A.clear();
+                B.clear();
+                C.clear();
+                D.clear();
+                E.clear();
+                a = new BigInteger("0");
+                b = new BigInteger("0");
+                c = new BigInteger("0");
+                d = new BigInteger("0");
+                e = new BigInteger("0");
+                f = new BigInteger("0");
+                g = new BigInteger("0");
+                s = new BigInteger("0");
+                e_1 = new BigInteger("0");
+                
+              
             }
         });
     }
@@ -138,10 +160,10 @@ public class MainActivity extends Activity {
         }
 
         //b = ||X||^2-a
-        BigInteger X_2 = new BigInteger("0");//初始化为0 X_2 = x1^2+x2^2+....
+        BigInteger X_2 = new BigInteger("0");//X_2 = x1^2+x2^2+....
         for (int i = 0; i <160; i++){
             BigInteger X2 = X.get(i);
-            X2 = X2.modPow(exponent,P);//||X||^2这里其实可以用modpow,就是可能需要问下师姐这个P是多少
+            X2 = X2.modPow(exponent,P);//||X||^2
             // X2=X2.pow(2);
             X_2=X_2.add(X2);//x1^2+x2^2+....
         }
@@ -211,7 +233,7 @@ public class MainActivity extends Activity {
         BigInteger p4 = exponent.multiply(p3).mod(P);
         s = d.subtract(p4).add(a).mod(P);
     }
-
+/*
     public String readFromSD(String filename) throws IOException {
         StringBuilder sb = new StringBuilder("");
         if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
