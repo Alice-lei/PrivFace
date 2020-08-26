@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
                 long EndTime = System.currentTimeMillis();
                 long Time = EndTime-StartTime;
                 String TimeStr = String.valueOf(Time);
-               Toast.makeText(getApplicationContext(),"测试结果="+CompareResult+" 时间="+TimeStr+"ms"+s,Toast.LENGTH_LONG).show();
+               Toast.makeText(getApplicationContext(),"Test Result="+CompareResult+" Time="+TimeStr+"ms"+s,Toast.LENGTH_LONG).show();
                
                 X.clear();
                 X_.clear();
